@@ -8,7 +8,7 @@ fun main(){
         User("Alex", 17),
         User("Clark", 22)
     )
-    val filterUsers = elementsCount(users) {it.age<30}
+    val filterUsers = elementsCount(users) {it.age>30}
     println(filterUsers)
 }
 
