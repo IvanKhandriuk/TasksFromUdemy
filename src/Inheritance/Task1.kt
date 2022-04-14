@@ -13,19 +13,28 @@ package Inheritance
 
 Для этой задачи есть видео с разбором.
 */
-fun main() {
 
+open class Figure(val color: String) {
+    var x: Int = 0
+    var y: Int = 0
+    fun moveLeft(step: Int) {
+        x -= step
+    }
+
+    fun moveRight(step: Int) {
+        x += step
+    }
+
+    fun moveDown(step: Int) {
+        y += step
+    }
+
+    fun moveUp(step: Int) {
+        y -= step
+    }
 }
 
-open class Figure(
-    val color: String
-) {
-    val x = 0
-    val y = 0
-
-}
-
-class Rectangle (val width: Double, val height: Double):Figure(color= String()) {
+class Rectangle(color: String, val width: Double, val height: Double) : Figure(color) {
     fun area(): Double {
         return width * height
     }
@@ -39,7 +48,7 @@ class Rectangle (val width: Double, val height: Double):Figure(color= String()) 
     }
 }
 
-class Round(private val radius: Double):Figure(color = String()) {
+class Round(color: String, val radius: Double) : Figure(color) {
     fun area(): Double {
         return Math.PI * radius * radius
     }
